@@ -1,16 +1,15 @@
-/*Sitewide Styles*/
-/*select all things - seriously use this one very wisely*/
+/* Order your css from top to bottom, but start with general sitewide rules at the top */
+
+/* Using an * is to set titewide styles*/
 * {
 	/*change the default color of all elements to black*/
 	color: #000;
 }
-/*select the body tag*/
 body {
-	background: none repeat scroll 0 0 #fff;
-	/*change the text color to light blackish*/
-	color: #222222;
-	/*set default margin to 0 - becuase every browser has a different default*/
+	/*set default margin to 0 - becuase every browser has a different default margin*/
 	margin:0;
+	display: flex;
+	flex-direction: column;
 }
 /*select all anchor tags*/
 a {
@@ -19,32 +18,23 @@ a {
 	/*remove default underline*/
 	text-decoration: none;
 }
-/*select all anchor tags that are hovered on*/
+/*select all anchor tags when they are hovered on*/
 a:hover {
-	/*change color on hover*/
-	color: #222222;
 	/*add underline when user hovers*/
 	text-decoration: underline;
 }
-/*select all anchor tags that have a class of button and are hovered on*/
-a.button:hover {
-	/*remove underline from hovered on buttons*/
-	text-decoration: none;
-}
-
 
 
 /*Top Section - Navigation*/
 /*select any elements with a class of top-navigation*/
 .top-navigation {
-	float:right;
+	display:flex;
+	justify-content: flex-end;
 	margin-right: 25px;
 }
 /*select any elements with a class of top-navigation and find any li tags inside those*/
 .top-navigation li{
-	list-style: none;
 	display: inline-block;
-	text-align: right;
 	padding: 5px 10px 0 0;
 	vertical-align: bottom;
 	margin: 5px 5px 0 0;
@@ -53,9 +43,8 @@ a.button:hover {
 /*select the font awesome standard class to change the icons*/
 .fa {
 	font-size: 20px;
-	vertical-align: top;
 	opacity: 0.7;
-	cursor: default;
+	cursor: pointer;
 }
 /*select the font awesome icons on hover*/
 .fa:hover {
@@ -65,7 +54,7 @@ a.button:hover {
 .share-button {
 	background-color: #f2f2f2;
 	padding:7px 15px;
-	cursor: default;
+	cursor: pointer;
 	position: relative;
   	top: -3px;
 }
@@ -87,9 +76,7 @@ a.button:hover {
 /*Middle Section - Search Box*/
 /*select any elements with a class of search-box*/
 .search-box {
-	position: absolute;
 	margin-top:75px;
-	width:100%;
 }
 /*select any elements with a class of search-box and then find any img tags inside*/
 .search-box img {
@@ -107,14 +94,9 @@ a.button:hover {
 	border-radius: 5px;
 	display: block;
 }
-/*select any elements with a class of search-box and then find any input tags inside that are currently focused*/
-.search-box input:focus {
-	border-color: #f5f5f5;
-}
 /*select any elements with a class of search-buttons*/
 .search-buttons  {
 	text-align: center;
-	padding-left: 0;
 }
 /*select any elements with a class of search-buttons and find all button tags inside*/
 .search-buttons button{
@@ -127,11 +109,10 @@ a.button:hover {
 	line-height: 27px;
 	margin: 17px 6px;
 	padding: 0 12px;
-	display: inline-block;
 	cursor: pointer;
 }
 /*select any elements with a class of search-buttons and find all button tags inside that are hovered on*/
-.search-button button:hover{
+.search-buttons button:hover{
 	background-color:#f8f8f8;
 	border: 1px solid #c6c6c6;
 	box-shadow:0 1px 1px rgba(0,0,0,0.1);
@@ -148,28 +129,23 @@ a.button:hover {
 	width:100%;
 	background-color: #f2f2f2;
 	border-top: 1px solid #e4e4e4;
+	display: flex;
+    justify-content: space-between;
 }
-/*select any elements with a class of left-site-links*/
-.left-site-links,
-/*and select any elements with a class of right-site-links*/
-.right-site-links {
+/*select any elements with a class of left-site-links and/or right-site-links*/
+.left-site-links, .right-site-links {
 	margin: 0;
 }
 /*select any elements with a class of left-site-links*/
 .left-site-links {
-	float:left;
 	padding-left:20px;
 }
 /*select any elements with a class of right-site-links*/
 .right-site-links {
-	float:right;
 	padding-right:10px;
 }
-/*select any elements with a class of left-site-links and find all li tags inside*/
-.left-site-links li,
-/*and select any elements with a class of right-site-links and find all li tags inside*/
-.right-site-links li{
-	list-style: none;
+/*select any elements with a class of left-site-links and/or right-site-links and find all li tags inside */
+.left-site-links li, .right-site-links li{
 	display: inline;
 	line-height: 40px;
 }
@@ -177,64 +153,14 @@ a.button:hover {
 .right-site-links li a:first-child {
 	padding-right:8px;
 }
-/*select any elements with a class of left-site-links and find all li tags inside then the 2nd anchor tags inside*/
-.left-site-links li:nth-child(2),
-/*and select any elements with a class of left-site-links and find all li tags inside then the 3rd anchor tags inside*/
-.left-site-links li:nth-child(3) {
+/*select any elements with a class of left-site-links and find all li tags inside then the 2nd and/or 3rd anchor tags inside*/
+.left-site-links li:nth-child(2), .left-site-links li:nth-child(3) {
 	margin-left:7px;
 }
-/*select any elements with a class of left-site-links and find all li tags inside then all the anchor tags inside*/
-.left-site-links li a,
-/*and select any elements with a class of right-site-links and find all li tags inside then all the anchor tags inside*/
-.right-site-links li a {
+/*select any elements with a class of left-site-links and/or right-site-links and find all li tags inside then all the anchor tags inside*/
+.left-site-links li a, .right-site-links li a {
 	color: #666666;
-  margin: 2px 10px 0;
-  letter-spacing: 0.1px;
-  font-size: 14px;
-}
-
-
-
-/*===============================
-		MEDIA QUERIES
-===============================*/
-/*screen size no greater than 700px*/
-@media(max-width:700px) {
-	.search-box input {
-		width: 75%;
-	}
-}
-
-/*screen size no greater than 550px*/
-@media(max-width:550px) {
-	.bottom-site-links .left-site-links {
-		padding-left: 10px;
-	}
-
-	.bottom-site-links .right-site-links {
-		padding: 0 10px;
-	}
-}
-
-/*screen size no greater than 500px*/
-@media(max-width:500px) {
-  .top-navigation {
-    float: none;
-    margin: 0 0 0 20px;
-  }
-	.top-navigation ul {
-		margin: 0 auto;
-		padding-left: 0;
-		width: 90%;
-	}
-	.top-navigation li {
-		margin: 0;
-	}
-	.bottom-site-links .right-site-links {
-		padding: 0;
-	}
-  .left-site-links li a, .right-site-links li a {
-    margin: 0;
-    font-size: 14px;
-  }
+  	margin: 2px 10px 0;
+  	letter-spacing: 0.1px;
+  	font-size: 14px;
 }
